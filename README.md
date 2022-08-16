@@ -25,5 +25,13 @@ variable()
 variable:get()
 
 variable:set('hello world')
+-- or
+variable:safeset(123456)
+
+-- creating new types
+local unsignedInt = tp.defTypes.num * tp.createType(function(value)
+	return value >= 0
+end)
+-- multiplication sign is a logical AND, plus is a logical OR
 ```
 
